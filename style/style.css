@@ -1,67 +1,170 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
-
-body {
-  margin:0px;
-  font-family:'Roboto';
-  text-align:center;
-  background-color:lightcyan;
+/*--------------------------------------------------------------
+# General Settings
+--------------------------------------------------------------*/
+a {
+  color: #149ddd;
+  text-decoration: none;
+}
+a:hover {
+  color: #37b3ed;
+  text-decoration: none;
 }
 
-#container {
-  color:#999;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+#header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  transition: all ease-in-out 0.5s;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 0 15px;
+  background: rgb(0, 33, 34);
+  overflow-y: auto;
+}
+#header .profile h1 a, #header .profile h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#main{
+  margin-left: 300px;
+}
+
+@media (max-width: 1199px) {
+  #header {
+    left: -300px;
+  }
+  #main {
+    margin-left: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+.nav-menu{
+  padding:30px 0 0 0;
+}
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  color: #a8a9b4;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.nav-menu a i {
+  font-size: 24px;
+  padding-right: 8px;
+  color: #6c76c7;
+}
+.nav-menu a span:hover{
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Spash Page
+--------------------------------------------------------------*/
+#hero{
+  width: 100%;
+  height:100vh;
+  background:url(/assets/splash.jpg)
+}
+
+#message h1, #message span{
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Sections 
+--------------------------------------------------------------*/
+section{
+  padding: 60px 0;
+  overflow: hidden;
+  height:100vh;
+}
+.section-bg {
+  background: #f5f8fd;
+}
+.section-title {
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #173b6c;
+}
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 150px;
+  height: 3px;
+  background: #149ddd;
+  bottom: 0;
+  left: 0;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+.skills .progress {
+  height: 60px;
+  display: block;
+  background: none;
+  border-radius: 0;
+}
+
+.skills .progress .skill {
+  padding: 0;
+  margin: 10px;
   text-transform: uppercase;
-  font-size:36px;
-  font-weight:bold;
-  padding-top:200px;  
-  position:fixed;
-  width:100%;
-  bottom:45%;
-  display:block;
+  display: block;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #050d18;
 }
 
-#flip {
-  height:50px;
-  overflow:hidden;
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
 }
 
-#flip > div > div {
-  color:#fff;
-  padding:4px 12px;
-  height:45px;
-  margin-bottom:45px;
-  display:inline-block;
+.skills .progress-bar-wrap {
+  background: #dce8f8;
+  height: 10px;
 }
 
-#flip div:first-child {
-  animation: show 5s linear infinite;
-}
-
-#flip div div {
-  background:#42c58a;
-}
-#flip div:first-child div {
-  background:#4ec7f3;
-}
-#flip div:last-child div {
-  background:#DC143C;
-}
-
-@keyframes show {
-  0% {margin-top:-270px;}
-  5% {margin-top:-180px;}
-  33% {margin-top:-180px;}
-  38% {margin-top:-90px;}
-  66% {margin-top:-90px;}
-  71% {margin-top:0px;}
-  99.99% {margin-top:0px;}
-  100% {margin-top:-270px;}
-}
-
-p {
-  position:fixed;
-  width:100%;
-  bottom:30px;
-  font-size:12px;
-  color:#999;
-  margin-top:200px;
+.skills .progress-bar {
+  height:10px;
+  transition: .9s;
+  background-color: #149ddd;
 }
